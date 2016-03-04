@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>life | 蓝色天空</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="2016-03-02 新年初始踩到的坑年初到现在一共工作12天，却觉得过了好久好久，特别精彩与长记性的感觉
+refer组件添加多次自动填充这事说大不大，说小不小，关键是在符合现有的条件来来实现，即最好不要造轮子。
+refer引用了typeahead.js来做自动填充。但是多次自动填充的话就会有很多问题，但是在强烈要求不要造轮子的情况下，通过查看typeahead.js的api也找到相应的解决方案。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="life">
+<meta property="og:url" content="http://yoursite.com/2016/03/02/life/index.html">
+<meta property="og:site_name" content="蓝色天空">
+<meta property="og:description" content="2016-03-02 新年初始踩到的坑年初到现在一共工作12天，却觉得过了好久好久，特别精彩与长记性的感觉
+refer组件添加多次自动填充这事说大不大，说小不小，关键是在符合现有的条件来来实现，即最好不要造轮子。
+refer引用了typeahead.js来做自动填充。但是多次自动填充的话就会有很多问题，但是在强烈要求不要造轮子的情况下，通过查看typeahead.js的api也找到相应的解决方案。">
+<meta property="og:updated_time" content="2016-03-02T14:16:43.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="life">
+<meta name="twitter:description" content="2016-03-02 新年初始踩到的坑年初到现在一共工作12天，却觉得过了好久好久，特别精彩与长记性的感觉
+refer组件添加多次自动填充这事说大不大，说小不小，关键是在符合现有的条件来来实现，即最好不要造轮子。
+refer引用了typeahead.js来做自动填充。但是多次自动填充的话就会有很多问题，但是在强烈要求不要造轮子的情况下，通过查看typeahead.js的api也找到相应的解决方案。">
+  
+    <link rel="alternative" href="/atom.xml" title="蓝色天空" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/">幻</a></h1>
+        </hgroup>
+
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/Home">博客首页</a></li>
+                        
+                            <li><a href="/works">作品展示</a></li>
+                        
+                            <li><a href="/about">留言打卡</a></li>
+                        
+                            <li><a href="/FrontEndGuide">前端导航</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="mail"><a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail"></a></li>
+                            
+                                <li id="github"><a class="github" target="_blank" href="https://github.com/luuman" title="github"></a></li>
+                            
+                                <li id="zhihu"><a class="zhihu" target="_blank" href="https://www.zhihu.com/people/luuman" title="zhihu"></a></li>
+                            
+                                <li id="weibo"><a class="weibo" target="_blank" href="http://weibo.com/lishangmou" title="weibo"></a></li>
+                            
+                                <li id="google"><a class="google" target="_blank" href="http://i.youku.com/shangmou" title="google"></a></li>
+                            
+                                <li id="twitter"><a class="twitter" target="_blank" href="http://twitter.com/luuman" title="twitter"></a></li>
+                            
+                                <li id="facebook"><a class="facebook" target="_blank" href="/#" title="facebook"></a></li>
+                            
+                                <li id="rss"><a class="rss" target="_blank" href="/atom.xml" title="rss"></a></li>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/js-promise/" style="font-size: 10px;">js, promise</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://MOxFIVE.github.io/">MOxFIVE</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.vsay.cn/">DoubleV</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.ccwebsite.com/">兮兮</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.dandyweng.com/">翁天信</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.plqblog.com/views/index.php">潘利强</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">幻</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">幻</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/Home">博客首页</a></li>
+                
+                    <li><a href="/works">作品展示</a></li>
+                
+                    <li><a href="/about">留言打卡</a></li>
+                
+                    <li><a href="/FrontEndGuide">前端导航</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="mail"><a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail"></a></li>
+                            
+                                <li id="github"><a class="github" target="_blank" href="https://github.com/luuman" title="github"></a></li>
+                            
+                                <li id="zhihu"><a class="zhihu" target="_blank" href="https://www.zhihu.com/people/luuman" title="zhihu"></a></li>
+                            
+                                <li id="weibo"><a class="weibo" target="_blank" href="http://weibo.com/lishangmou" title="weibo"></a></li>
+                            
+                                <li id="google"><a class="google" target="_blank" href="http://i.youku.com/shangmou" title="google"></a></li>
+                            
+                                <li id="twitter"><a class="twitter" target="_blank" href="http://twitter.com/luuman" title="twitter"></a></li>
+                            
+                                <li id="facebook"><a class="facebook" target="_blank" href="/#" title="facebook"></a></li>
+                            
+                                <li id="rss"><a class="rss" target="_blank" href="/atom.xml" title="rss"></a></li>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-life" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/02/life/" class="article-date">
+      <time datetime="2016-03-02T14:14:58.000Z" itemprop="datePublished">2016-03-02</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      life
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="2016-03-02__u65B0_u5E74_u521D_u59CB_u8E29_u5230_u7684_u5751"><a href="#2016-03-02__u65B0_u5E74_u521D_u59CB_u8E29_u5230_u7684_u5751" class="headerlink" title="2016-03-02 新年初始踩到的坑"></a>2016-03-02 新年初始踩到的坑</h2><p>年初到现在一共工作12天，却觉得过了好久好久，特别精彩与长记性的感觉</p>
+<h3 id="refer_u7EC4_u4EF6_u6DFB_u52A0_u591A_u6B21_u81EA_u52A8_u586B_u5145"><a href="#refer_u7EC4_u4EF6_u6DFB_u52A0_u591A_u6B21_u81EA_u52A8_u586B_u5145" class="headerlink" title="refer组件添加多次自动填充"></a>refer组件添加多次自动填充</h3><p>这事说大不大，说小不小，关键是在符合现有的条件来来实现，即最好不要造轮子。</p>
+<p>refer引用了typeahead.js来做自动填充。但是多次自动填充的话就会有很多问题，但是在强烈要求不要造轮子的情况下，通过查看typeahead.js的api也找到相应的解决方案。</p>
+<p>当时的难点在：</p>
+<pre><code>* 是否可添加新的选项
+* 如可添加新的选项，如果配置添加的接口与返回信息
+* 点击选项后取值并清空当前的input
+</code></pre><p>解决方案是做个基类，所有的可控项可配置，并将callback事件进行可配置，以应对修改其他信息。</p>
+<ul>
+<li>个人总结<ul>
+<li>做组件要有很多情况的考虑，但是不要过多</li>
+<li>方法不可写的太死，要可配置</li>
+<li>尽可能地不去造轮子（虽然是前端的通病）！不造轮子！不造轮子</li>
+</ul>
+</li>
+</ul>
+<h3 id="api_u68C0_u7D22_u95EE_u9898"><a href="#api_u68C0_u7D22_u95EE_u9898" class="headerlink" title="api检索问题"></a>api检索问题</h3><p>我戏说是一个or引用的惨案，虽然内心很纠结与难过。但是这次的原因主要在于自己对mysql掌握的不足以及太懒的跑测试造成的</p>
+<pre><code>select * from table where id = 100 or id = 101;
+select * from table where id in (100, 101)
+</code></pre><p>如果可以用in尽量不要用or，首先是in在检索速度要比or快，另一方面在检查不中的情况下出来的结果可能是下面这样： （我就是这么作死的 ~~）</p>
+<pre><code>select * from table where 100 or 101;
+</code></pre><p>不要问为什么会成这样！有一方面没有考虑到就会这样！测试用例没有修改，或者是用户端数据传输的不对就会这样！</p>
+<ul>
+<li>个人总结<ul>
+<li>多读，多看看别人怎么写的</li>
+<li>多实践，实践出真知！</li>
+<li>一定要用心写测试，提交之前跑全部测试</li>
+</ul>
+</li>
+</ul>
+<h3 id="u529F_u80FD_u56DE_u9000"><a href="#u529F_u80FD_u56DE_u9000" class="headerlink" title="功能回退"></a>功能回退</h3><p>在refer完成多次自动填充功能的情况下，决定正行现有情况的改造，在邀请和通知功能上进行实践，然后各种点点点，各种修改，两三天下完成了。也就是今天准备上线，然后产品觉得不行了。。。。。在沟通好久的情况下，我毅然决然的选择了回退，这时候脑子里默默的想起了锋哥说过的：做的不好还为什么要上线</p>
+<p>做的不好是什么概念？</p>
+<p>第一： 没有还原原来的功能，上线被吐槽，为什么之前的功能没有了</p>
+<p>第二： 没有完全完成预期的功能，还引进了bug。</p>
+<p>第三： 交互不够流畅不够快，给用户体验就是卡或者挫的感觉</p>
+<p>但是这三项我全占了。虽然实现看起来比较炫的功能。预期在完成其他辅助的功能之后再上一个相对来说完美一版。</p>
+<ul>
+<li>个人总结<ul>
+<li>多跟产品沟通下某项功能，全面了解用户需求</li>
+<li>多让吐槽龙code review，听吐槽龙吐槽代码特别长姿势</li>
+<li>不要一次把功能修改的特别大，步子大了容易裂裆</li>
+</ul>
+</li>
+</ul>
+<h3 id="u4ECA_u5929_u7684_u6211"><a href="#u4ECA_u5929_u7684_u6211" class="headerlink" title="今天的我"></a>今天的我</h3><p>其实下午的时候是特别郁闷的，三个比较大的功能虽然都是基于一个上做的实现，但是中间都有好多问题，连续挺吐槽龙吐槽了好久我的代码，然后下午发现有段代码有问题，准备删掉的时候被张弛发现了，接着吐槽了。。。<br>然后说说代码上我的问题</p>
+<pre><code>* 命名。变量命名是被吐槽龙吐槽最多的，找合适的名字很难，尤其是在写业务的时候有时候会假死
+* 正则。 有时候可以用逻辑来完成的事情，一行正则也就搞定了。
+* 马虎不仔细。
+* 想的太少，没有考虑到api可测试的所有情况。
+* 沟通少。
+* 不够淡定，有时候脱离当时的心情看问题就一下子看出问题了。
+* 多线程，其实有时候多个任务并行的时候并不能很快很有效的切换。
+</code></pre><p>回来路上想了很多出在自己身上的问题，而且好多是当时心情影响的，导致自己的暴躁，然后问题就越来越多，控制情绪，减少线程。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/03/02/life/">life</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 幻 的个人博客">幻</a></p>
+        <p><span>发布时间:</span>2016年03月02日 - 22时14分</p>
+        <p><span>最后更新:</span>2016年03月02日 - 22时16分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/03/02/life/" title="life">http://yoursite.com/2016/03/02/life/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/03/02/life/　　作者: 幻" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2016/02/01/promise/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">promise</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2016-03-02__u65B0_u5E74_u521D_u59CB_u8E29_u5230_u7684_u5751"><span class="toc-number">1.</span> <span class="toc-text">2016-03-02 新年初始踩到的坑</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#refer_u7EC4_u4EF6_u6DFB_u52A0_u591A_u6B21_u81EA_u52A8_u586B_u5145"><span class="toc-number">1.1.</span> <span class="toc-text">refer组件添加多次自动填充</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#api_u68C0_u7D22_u95EE_u9898"><span class="toc-number">1.2.</span> <span class="toc-text">api检索问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u529F_u80FD_u56DE_u9000"><span class="toc-number">1.3.</span> <span class="toc-text">功能回退</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u4ECA_u5929_u7684_u6211"><span class="toc-number">1.4.</span> <span class="toc-text">今天的我</span></a></li></ol></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/03/02/life/" data-title="life" data-url="http://yoursite.com/2016/03/02/life/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"null"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2016/02/01/promise/" title="下一篇: promise">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/03/02/life/">life</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/01/promise/">promise</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/30/hello-world/">Hello World</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+
+
+  <script language="javascript">
+$(function() {
+    $("a[title]").each(function() {
+        var a = $(this);
+        var title = a.attr('title');
+        if (title == undefined || title == "") return;
+        a.data('title', title).removeAttr('title').hover(
+
+        function() {
+            var offset = a.offset();
+            $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                top: offset.top - a.outerHeight() - 15,
+                left: offset.left + a.outerWidth()/2 + 1
+            }).fadeIn(function() {
+                var pop = $(this);
+                setTimeout(function() {
+                    pop.remove();
+                }, pop.text().length * 800);
+            });
+        }, function() {
+            $("#anchortitlecontainer").remove();
+        });
+    });
+});
+</script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2016 幻
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >海贼到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                //$("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
